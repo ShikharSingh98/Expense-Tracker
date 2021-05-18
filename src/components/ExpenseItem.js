@@ -1,14 +1,14 @@
 import React from 'react';
 import './ExpenseItem.css';
 
-function ExpenseItem() {
+function ExpenseItem(props) {
   return (
     <article className="expense-item">
       <div className="expense-item-details">
-        <p className="expense-item-date">May 18th 2021</p>
-        <p className="expense-item-name">Car Insurance</p>
+        <p className="expense-item-date">{props.date.toDateString()}</p>
+        <p className="expense-item-name">{props.name}</p>
       </div>
-      <p className="expense-item-price">Rs54000</p>
+      <p className="expense-item-amount">Rs {props.amount}</p>
     </article>
   );
 }

@@ -3,28 +3,33 @@
   align-items: center;
   justify-content: space-around;
   font-family: 'Varela Round', sans-serif;
-  border-radius: 20px;
-  box-shadow: 2px 2px 8px rgb(230, 229, 229);
+  border-radius: 10px;
+  box-shadow: -1.5px 1.5px 3px rgb(197, 197, 197);
+  margin: 0.5rem 0;
 }
 .expense-item-details {
   display: flex;
   align-items: center;
+  width: 50rem;
+  margin-left: 2rem;
 }
 
 .expense-item-date {
   color: #586f7c;
+  width: 10rem;
 }
 
 .expense-item-name {
   text-transform: uppercase;
-  margin-left: 10rem;
-  font-size: 1.5rem;
+  margin-left: 5rem;
+  font-size: 1.3rem;
   font-weight: 600;
   color: #4d5ce8;
 }
 
-.expense-item-price {
+.expense-item-amount {
   color: #ff6161;
   font-size: 1.1rem;
   font-weight: bold;
+  width: 10rem;
 }
