@@ -17,6 +17,7 @@
 .expense-item-date {
   color: #586f7c;
   width: 10rem;
+  padding: 1.5rem 0;
 }
 
 .expense-item-name {
