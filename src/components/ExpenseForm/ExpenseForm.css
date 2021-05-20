@@ -1,0 +1,43 @@
+.expense-form {
+  margin: 2rem auto;
+  width: 55rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.expense-form-control {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  padding: 2rem 0;
+}
+
+.expense-form-control label {
+  font-size: 1.1rem;
+  color: #495867;
+  margin-bottom: 1rem;
+}
+
+.expense-form-control input {
+  border: 1px solid #c2c8ce;
+  padding: 0.4rem 0.6rem;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
+
+.expense-form-button {
+  border: none;
+  outline: none;
+  background: #4d5ce8;
+  cursor: pointer;
+  width: 14rem;
+  padding: 0.8rem 1.4rem;
+  color: #fff;
+  border-radius: 5px;
+  margin: 2.3rem auto;
+  font-weight: 600;
+  text-transform: uppercase;
+}
