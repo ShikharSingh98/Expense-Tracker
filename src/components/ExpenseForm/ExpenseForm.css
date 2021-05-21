@@ -16,7 +16,7 @@
 
 .expense-form-control label {
   font-size: 1.1rem;
-  color: #495867;
+  color: #fff;
   margin-bottom: 1rem;
 }
 
@@ -31,7 +31,7 @@
 .expense-form-button {
   border: none;
   outline: none;
-  background: #4d5ce8;
+  background: #1eae98;
   cursor: pointer;
   width: 14rem;
   padding: 0.8rem 1.4rem;
