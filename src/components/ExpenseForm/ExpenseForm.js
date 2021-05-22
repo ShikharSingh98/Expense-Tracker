@@ -3,29 +3,34 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 function ExpenseForm(props) {
-  const [expenseData, setExpenseData] = useState({
-    expenseName: '',
-    expenseDate: '',
-    expenseAmount: '',
-  });
+  const [expenseName, setExpenseName] = useState('');
+  const [expenseDate, setExpenseDate] = useState('');
+  const [expenseAmount, setExpenseAmount] = useState('');
 
-  function inputChangeHandler(event) {
-    setExpenseData(function (prevState) {
-      return { ...prevState, [event.target.name]: event.target.value };
-    });
+  function nameChangeHandler(event) {
+    setExpenseName(event.target.value);
+  }
+
+  function amountChangeHandler(event) {
+    setExpenseAmount(event.target.value);
+  }
+
+  function dateChangeHandler(event) {
+    setExpenseDate(event.target.value);
   }
 
   function formSubmitHandler(event) {
     event.preventDefault();
-    props.onSaveExpenseData(expenseData);
-    setExpenseData({
-      expenseName: '',
-      expenseDate: '',
-      expenseAmount: '',
-    });
+    const expeseData = {
+      name: expenseName,
+      amount: expenseAmount,
+      date: new Date(expenseDate),
+    };
+    props.onSaveExpenseData(expeseData);
+    setExpenseName('');
+    setExpenseAmount('');
+    setExpenseDate('');
   }
-
-  const { expenseName, expenseAmount, expenseDate } = expenseData;
 
   return (
     <form className="expense-form" onSubmit={formSubmitHandler}>
@@ -35,7 +40,7 @@ function ExpenseForm(props) {
           type="text"
           name="expenseName"
           value={expenseName}
-          onChange={inputChangeHandler}
+          onChange={nameChangeHandler}
         />
       </div>
       <div className="expense-form-control">
@@ -44,7 +49,7 @@ function ExpenseForm(props) {
           type="number"
           name="expenseAmount"
           value={expenseAmount}
-          onChange={inputChangeHandler}
+          onChange={amountChangeHandler}
         />
       </div>
       <div className="expense-form-control">
@@ -53,7 +58,7 @@ function ExpenseForm(props) {
           type="date"
           name="expenseDate"
           value={expenseDate}
-          onChange={inputChangeHandler}
+          onChange={dateChangeHandler}
         />
       </div>
       <div className="expense-form-control">
