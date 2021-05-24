@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ExpenseForm from './components/ExpenseForm/ExpenseForm';
 import Expenses from './components/Expenses/Expenses';
 
 function App() {
-  const expenses = [
+  const [expenses, setExpenses] = useState([
     {
       id: 'e1',
       name: 'Health',
@@ -23,11 +23,13 @@ function App() {
       amount: 500,
       date: new Date(2021, 5, 12),
     },
-  ];
+  ]);
 
   function saveExpenseDataHandler(enterdExpenseData) {
     const expenseData = { ...enterdExpenseData, id: Date.now() };
-    console.log(expenseData);
+    setExpenses((prevState) => {
+      return [...prevState, expenseData];
+    });
   }
 
   return (
