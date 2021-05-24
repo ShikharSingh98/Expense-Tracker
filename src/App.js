@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import ExpenseForm from './components/ExpenseForm/ExpenseForm';
 import Expenses from './components/Expenses/Expenses';
 
+import './App.css';
+
 function App() {
   const [expenses, setExpenses] = useState([
     {
@@ -34,6 +36,7 @@ function App() {
 
   return (
     <div>
+      <h1 className="heading">Expense Tracker</h1>
       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
       <Expenses expenses={expenses} />
     </div>

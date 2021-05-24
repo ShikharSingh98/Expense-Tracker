@@ -1,0 +1,24 @@
+.expense-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 1rem;
+}
+
+.expense-filter-label {
+  font-size: 1.1rem;
+  font-family: 'Varela Round', sans-serif;
+  color: #fff;
+}
+
+.expense-filter-control {
+  font-family: 'Varela Round', sans-serif;
+  width: 10%;
+  outline: none;
+  font-size: 1.1rem;
+  padding: 0.3srem 1rem;
+  color: #233e8b;
+  border-radius: 5px;
+}
