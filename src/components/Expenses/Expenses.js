@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ExpenseItem from '../ExpenseItem/ExpenseItem';
+import ExpenseFilter from '../ExpenseFilter/ExpenseFilter';
 import './Expenses.css';
 
 function Expenses(props) {
+  const [filterYear, setFilterYear] = useState('2021');
+
+  function filterYearHandler(year) {
+    setFilterYear(year);
+  }
+
+  function filterExpenses() {
+    return props.expenses.filter(
+      (expense) => expense.date.getFullYear().toString() === filterYear
+    );
+  }
+
   return (
     <div className="expenses">
-      {props.expenses.map((expense) => {
+      <ExpenseFilter onFilterYear={filterYearHandler} />
+      {filterExpenses().map((expense) => {
         return (
           <ExpenseItem
             key={expense.id}
